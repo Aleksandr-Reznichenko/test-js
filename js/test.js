@@ -1,14 +1,7 @@
-"use strict";
+'use strict';
 
-const start = 6;
-const end = 17;
-let number;
-
-for (let i = start; i <= end; i++) {
-  if (i % 5 === 0) {
-    number = i;
-    break;
-  }
+let num = 0;
+for (let i = 0; i >= -100; i--) {
+  num -= i;
+  console.log(i);
 }
-
-console.log(number);
