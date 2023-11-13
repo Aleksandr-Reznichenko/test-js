@@ -1,51 +1,57 @@
 'use strict';
 
-// Задача 4. Загальний баланс
+//
 
-const getTotalBalanceByGender = (users, gender) => {
-  return users
-    .filter(user => user.gender === gender)
-    .reduce((totalBalance, user) => totalBalance + user.balance, 0);
-};
+// function greet(name) {
+//   console.log(`Ласкаво просимо, ${name}!`);
+// }
 
-const allUsers = [
-  {
-    name: 'Moore Hensley',
-    gender: 'male',
-    balance: 2811,
-  },
-  {
-    name: 'Sharlene Bush',
-    gender: 'female',
-    balance: 3821,
-  },
-  {
-    name: 'Ross Vazquez',
-    gender: 'male',
-    balance: 3793,
-  },
-  {
-    name: 'Elma Head',
-    gender: 'female',
-    balance: 2278,
-  },
-  {
-    name: 'Carey Barr',
-    gender: 'male',
-    balance: 3951,
-  },
-  {
-    name: 'Blackburn Dotson',
-    gender: 'male',
-    balance: 1498,
-  },
-  {
-    name: 'Sheree Anthony',
-    gender: 'female',
-    balance: 2764,
-  },
-];
+// function notify(name) {
+//   console.log(`${name}, ваша кімната буде готова через 30 хв.`);
+// }
 
-console.log(getTotalBalanceByGender(allUsers, 'male')); // 12053
+// function registerGuest(name, callback) {
+//   console.log(`Реєстрація ${name}`);
+//   callback(name);
+// }
 
-console.log(getTotalBalanceByGender(allUsers, 'female')); // 8863
+// registerGuest('Олександр', notify);
+
+//////////////////////////////////////////////////
+
+// function registerGuest(name, callback) {
+//   console.log(`Реєстрація ${name}`);
+//   callback(name);
+// }
+
+// registerGuest('Олександр', function greet(name) {
+//   console.log(`Ласкаво просимо, ${name}!`);
+// });
+
+// registerGuest('Олександр', function notify(name) {
+//   console.log(`${name}, ваша кімната буде готова через 30 хв.`);
+// });
+
+// registerGuest('Олександр', function roomIsReady(name) {
+//   console.log(`${name}, ваша кімната готова!`);
+// });
+
+//////////////////////////////////////////////////////////////////
+
+function doMath(a, b, callback) {
+  const result = callback(a, b);
+  console.log(result);
+}
+
+doMath(2, 5, function (x, y) {
+  return x + y;
+});
+doMath(2, 5, function (x, y) {
+  return x - y;
+});
+doMath(2, 5, function (x, y) {
+  return x * y;
+});
+doMath(2, 5, function (x, y) {
+  return x / y;
+});
