@@ -1,37 +1,22 @@
 'use strict';
 
-// Задача 3. Конструктор рядків
+//
 
-class StringBuilder {
-  #value;
+// class Order {
+//   #tableNumber = 0;
+//   #items = [{ name: 'Круасан', price: 75 }];
+//   #isPaid = false;
 
-  constructor(value) {
-    this.#value = value;
-  }
+//   constructor({ tableNumber, items, isPaid }) {
+//     this.#tableNumber = tableNumber;
+//     this.items = items;
+//     this.isPaid = isPaid;
+//   }
+//   calculateTotal() {}
+// }
 
-  getValue() {
-    return this.#value;
-  }
+// const order = new Order({});
 
-  padStart(str) {
-    this.#value = str + this.#value;
-  }
+// const item = document.querySelector('.list-item');
 
-  padEnd(str) {
-    this.#value = this.#value + str;
-  }
-
-  padBoth(str) {
-    this.#value = str + this.#value + str;
-  }
-}
-
-const builder = new StringBuilder('.');
-
-console.log(builder.getValue()); // "."
-builder.padStart('^');
-console.log(builder.getValue()); // "^."
-builder.padEnd('^');
-console.log(builder.getValue()); // "^.^"
-builder.padBoth('=');
-console.log(builder.getValue()); // "=^.^="
+// console.log(item);

@@ -1,101 +1,105 @@
-// 'use strict';
+'use strict';
 
-// //
+/*
+    document.querySelector(".class")
 
-// class Auto {
-//   // Публічні властивості (необов'язкове оголошення)
-//   brand = ''; // по дефолту пустий рядок
-//   model = '';
-//   fuel = '';
-//   run = 0; // по дефолту число 0
-//   price = 0;
-//   year = 0;
-//   // Приватні властивості (обов'язкове оголошення)
-//   #vinCode = '';
+    textContent
 
-//   // Конструктор
-//   constructor({ brand, model, vinCode, fuel, run, year, price }) {
-//     this.brand = brand;
-//     this.model = model;
-//     this.fuel = fuel;
-//     this.run = run;
-//     this.year = year;
-//     this.price = price;
+    classList:
+            classList.contains(className) - перевіряє (true або false)
+            classList.add(className) - додати
+            classList.remove(className) - видалити
+            classList.toggle(className)  - додає в кінець списку класів, якщо className відсутній і навпаки видаляє, якщо він є
+            classList.replace(oldClassName, newClassName) - стара назва класу, нова назва класу
+    
+    style
 
-//     this.#vinCode = vinCode;
-//   }
+    element.hasAttribute(nameAttribute) - перевіряє (true або false)
+    element.getAttribute(nameAttribute) - повертає значення атрибута
+    element.setAttribute(nameAttribute, value) - приймає два аргументи: рядок з іменем атрибута, який потрібно встановити або змінити, та значення, яке цьому атрибуту треба присвоїти.
+    element.removeAttribute(nameAttribute) - видаляє атрибут зі значенням.
 
-//   // Методи класу (функції)
-//   brandPrice(color) {
-//     console.log(
-//       `Ціна автомобіля ${this.brand} ${this.model}, який має ${color} колір: ${this.price}грн.`
-//     );
-//   }
+    Отримання значень (властивість dataset)
+    Зміна значень (властивість dataset)
+    Видалення атрибута (оператор delete)
+*/
 
-//   brandRun() {
-//     console.log(
-//       `Пробіг автомобіля ${this.brand} ${this.model}: ${this.run} км.`
-//     );
-//   }
+//
 
-//   //------------------
+// const button = document.querySelector('.btn');
+// const box = document.querySelector('.box');
 
-//   getBrand() {
-//     return this.brand;
-//   }
-//   changeBrand(newBrand) {
-//     this.brand = newBrand;
-//   }
+// const handleButtonClick = () => {
+//   box.style.backgroundColor = 'teal';
+//   box.style.marginLeft = '10px';
+//   //   button.removeEventListener('click', onButtonClick);
+// };
 
-//   getModel() {
-//     return this.model;
-//   }
-//   changeModel(newModel) {
-//     this.model = newModel;
-//   }
+// button.addEventListener('click', handleButtonClick, { once: true });
 
-//   // Публічні методи для приватної властивості. Геттер і сеттер
-//   get vinCode() {
-//     return this.#vinCode;
-//   }
-//   set vinCode(newVinCode) {
-//     if (this.#requiredVinCode(newVinCode)) {
-//       this.#vinCode = newVinCode;
-//     } else {
-//       console.log('Не правильний формат VIN коду');
-//     }
-//   }
-//   #requiredVinCode(vinCode) {
-//     return vinCode.includes('WVG');
-//   }
-// }
+//====================================================================//
 
-// // Екземпляр класу Auto (інстанс класу Auto)
-// const volkswagen = new Auto({
-//   brand: 'Volkswagen',
-//   model: 'Toureg',
-//   vinCode: 'WVGMMM7PZED023722',
-//   fuel: 'diesel',
-//   run: 115000,
-//   year: 2023,
-//   price: 64000,
+// const userName = document.querySelector('.js-user-name');
+// const button = document.querySelector('.js-button');
+
+// let usename = '';
+
+// userName.addEventListener('input', event => {
+//   usename = event.currentTarget.value.trim();
 // });
 
-// console.log(volkswagen);
+// userName.addEventListener('blur', event => {
+//   if (!event.target.value) {
+//     console.log("Будь ласка, введіть ім'я!");
+//   }
+// });
 
-// volkswagen.brandPrice('сірий');
+// button.addEventListener(
+//   'click',
+//   () => {
+//     console.log(`Привіт, ${usename}!`);
+//     userName.value = '';
+//     usename = '';
+//   },
+//   { once: true }
+// );
 
-// console.log(volkswagen.getBrand(), volkswagen.getModel());
-// volkswagen.changeBrand('VW');
-// volkswagen.changeModel('Passat B8');
-// console.log(volkswagen.getBrand(), volkswagen.getModel());
+//====================================================================//
 
-// console.log(Auto.prototype); // виводить в консоль наявність методів (функцій)
+// const form = document.querySelector('.js-form');
 
-// /*
-// Для того, щоб отримати або змінити значення приватної властивості,
-// потрібно використати публічні методи
-// */
-// console.log(volkswagen.vinCode);
-// volkswagen.vinCode = 'WVGIII7PZED034816';
-// console.log(volkswagen.vinCode);
+// const response = [];
+
+// form.addEventListener('submit', event => {
+//   event.preventDefault();
+
+//   const data = new FormData(event.target);
+
+//   data.forEach((value, key) => {
+//     // console.log(`${key}: ${value}`);
+//     response[key] = value;
+//   });
+
+//   console.log(response);
+// });
+
+//====================================================================//
+
+// document.addEventListener('keydown', event => {
+//   console.log(event.code);
+// });
+
+//====================================================================//
+
+// const button = document.querySelector('.btn');
+const box = document.querySelector('.box');
+
+// const handleButtonClick = () => {
+//   box.style.backgroundColor = 'teal';
+//   box.style.marginLeft = '10px';
+//   //   button.removeEventListener('click', onButtonClick);
+// };
+
+box.addEventListener('mousemove', () => {
+  console.log('Move ');
+});
