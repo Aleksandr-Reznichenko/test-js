@@ -1,4 +1,17 @@
 'use strict';
 
-console.log(_.sum([4, 2, 8, 6])); // 20
-console.log(_.sum([5, 10])); // 15
+// ======= >>>
+
+const elem = {
+  name: 'Josh',
+  weight: 175,
+  age: 30,
+  eyecolor: 'brown',
+  isHappy: true,
+  cars: ['Chevy', 'Honda'],
+  favoriteBook: {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+};
