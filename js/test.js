@@ -2,16 +2,14 @@
 
 // ======= >>>
 
-const elem = {
-  name: 'Josh',
-  weight: 175,
-  age: 30,
-  eyecolor: 'brown',
-  isHappy: true,
-  cars: ['Chevy', 'Honda'],
-  favoriteBook: {
-    title: 'The Last Kingdom',
-    author: 'Bernard Cornwell',
-    rating: 8.38,
-  },
-};
+function passwordVerification(pass) {
+  if (pass.length < 8) {
+    return 'Пароль повинен містити не менше 8 символів.';
+  } else {
+  }
+}
+
+console.log(passwordVerification('FvLl!jbDSD54'));
+console.log(passwordVerification('FvLl!j'));
+console.log(passwordVerification('FvLlsjbDSD54'));
+console.log(passwordVerification('sjv1Ds32#5$'));
